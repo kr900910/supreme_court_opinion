@@ -1,6 +1,9 @@
 # Studying Party Differences in Opinion Writing on the Supreme Court
 - Alyssa Eisenberg and Seung Ham
-- June 17, 2018
+- July, 2018
+
+## Final Report:
+https://www.overleaf.com/18030681xdgdmpsmvswg
 
 ## Proposal:
 
