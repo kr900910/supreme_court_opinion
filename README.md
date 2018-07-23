@@ -2,6 +2,11 @@
 - Alyssa Eisenberg and Seung Ham
 - July, 2018
 
+## How to Get Data:
+1. In **data** folder, run ``. data_download.sh`` which will download all the necessary data.
+2. Run ``python data_process.py`` which will create **data.p** file containing both party information and tokenized opinion texts.
+3. In EDA.ipynb, there is a line of code saving vocabulary class to **vocab.p** file which can be used later for modeling (i.e. Baseline.ipynb).
+
 ## Final Report:
 <a href="https://www.overleaf.com/18030683ttmhjwjsvysx#/68288176/" target="_blank">Click here</a>
 
