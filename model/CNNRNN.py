@@ -167,7 +167,7 @@ class CNNRNN(object):
             self.W_out_ = tf.Variable(tf.random_normal([2*self.num_rnn_units, self.num_classes]), name="W_out")
             self.b_out_ = tf.Variable(tf.zeros([self.num_classes,], dtype=tf.float32), name="b_out")
             self.logits_ = tf.add(tf.matmul(self.rnn_o_, self.W_out_), self.b_out_, name="logits")
-            self.predictions = tf.argmax(self.logits_, 1, name="predictions")
+            self.predictions_ = tf.argmax(self.logits_, 1, name="predictions")
 
         # Loss computation (true loss, for prediction)
         with tf.name_scope("Cost_Function"):
@@ -178,7 +178,7 @@ class CNNRNN(object):
 
         # Accuracy calculation
         with tf.name_scope("Accuracy"):
-            correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y_, 1))
+            correct_predictions = tf.equal(self.predictions_, tf.argmax(self.input_y_, 1))
             self.accuracy_ = tf.reduce_mean(tf.cast(correct_predictions, "float"), name="accuracy")
             
             
