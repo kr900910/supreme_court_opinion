@@ -13,3 +13,6 @@ rm all.tar.gz
 wget "https://www.courtlistener.com/api/bulk-data/clusters/scotus.tar.gz"
 tar xf scotus.tar.gz -C ./clusters
 rm scotus.tar.gz
+
+wget https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz -P ../model/
+gunzip -c ../model/GoogleNews-vectors-negative300.bin.gz > ../model/GoogleNews-vectors-negative300.bin

@@ -31,9 +31,8 @@ class Vocabulary(object):
         self.bigram_counts.default_factory = None  # make into a normal dict
 
         # Leave space for "<s>", "</s>", and "<unk>"
-        top_counts = self.unigram_counts.most_common(None if size is None else (size - 3))
-        vocab = ([self.START_TOKEN, self.END_TOKEN, self.UNK_TOKEN] +
-                 [w for w,c in top_counts])
+        top_counts = self.unigram_counts.most_common(None if size is None else size)
+        vocab = [w for w,c in top_counts]
 
         # Assign an id to each word, by frequency
         self.id_to_word = dict(enumerate(vocab))
@@ -46,9 +45,9 @@ class Vocabulary(object):
         self.wordset = set(self.word_to_id.keys())
 
         # Store special IDs
-        self.START_ID = self.word_to_id[self.START_TOKEN]
-        self.END_ID = self.word_to_id[self.END_TOKEN]
-        self.UNK_ID = self.word_to_id[self.UNK_TOKEN]
+#         self.START_ID = self.word_to_id[self.START_TOKEN]
+#         self.END_ID = self.word_to_id[self.END_TOKEN]
+#         self.UNK_ID = self.word_to_id[self.UNK_TOKEN]
 
     @property
     def num_unigrams(self):
