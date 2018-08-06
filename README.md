@@ -44,7 +44,7 @@ Detailed model parameters used can be found in [NN.ipynb](NN.ipynb) file. Model 
 On top of building prediction model, we wanted to understand what words contribute most to each party. For the baseline model, we looked at magnitude of coefficients of logisitc regression. Some of top 10 words for each party were judge names corresponding to each party which was not surprising. For the neural net model, we tried to use LIME method, but since there was no function readily available for our model structure and due to limited time, we couldn't really look at which words contribute the most to political party.
 
 ### Cross-entropy Comaprison
-For both baseline and neural network models, we divided train dataset into 10 time periods of equal length and calculated cross-entropy loss for each period to see if there was any trend over time. Higher cross-entropy loss means less party difference in opinion texts, and both models show similar trends over time.
+For both baseline and neural network models, we divided train dataset into 10 time periods of equal length and calculated cross-entropy loss for each period to see if there was any trend over time. Higher cross-entropy loss means less party difference in opinion texts. The baseline shows some change over time while the neural net doesn't show much difference over time.
 
 ## Final Note
 If we had more time, we could spend a bit more time on tuning hyperparameters for the neural net model. Since the model was very complex, it took long time to train the model, and it would be great if we could opitimze it more. Also, as discussed above, it would be great to use LIME method to find out whether the model is actually working real.
